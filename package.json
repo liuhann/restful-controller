@@ -1,6 +1,6 @@
 {
   "name": "restful-controller",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build RESTful API with koa and mongodb",
   "main": "src/init.js",
   "scripts": {
