@@ -67,12 +67,10 @@ class RESTFullController {
     }
     await next()
   }
-
-
   /**
    * 获取文档列表
-   * @param {} ctx 
-   * @param {*} next 
+   * @param {} ctx
+   * @param {*} next
    */
   async list (ctx, next) {
     debug(`REST list ${ctx.path}?${ctx.querystring}`)
@@ -136,7 +134,7 @@ class RESTFullController {
 
   async create (ctx, next) {
     let object = ctx.request.body
-    object.creator = ctx.user.id
+    object.creator = ctx.user ? ctx.user.id : 'anonymous'
     object.created = new Date().getTime()
     object.updated = object.created
     object.token = ctx.token
