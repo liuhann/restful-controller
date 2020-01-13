@@ -2,6 +2,11 @@
  * The client for rest controller
  */
 export default class RestClient {
+  /**
+   * 
+   * @param {Object} ctx the service to send out http request. Use ky as default
+   * @param {String} path restfull base uri 
+   */
   constructor (ctx, path) {
     this.ctx = ctx
     this.path = path
@@ -80,7 +85,7 @@ export default class RestClient {
    * @param {Object} json
    */
   async patch (id, json) {
-    await this.ctx.ky.patch(`${this.path}/${id}`, {
+    await this.ctx.patch(`${this.path}/${id}`, {
       json
     })
   }
